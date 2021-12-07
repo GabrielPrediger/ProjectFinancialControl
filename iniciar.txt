@@ -1,0 +1,13 @@
+
+* LOCALIZAÇÃO DO PROJETO
+cd C:\Users\Gabss\OneDrive\Documentos\GitHub\Financial-Control
+
+* GERAR A KEY
+php artisan key:generate
+
+* INICIAR
+php artisan serve
+
+* CASO DE ERRO AO EXECUTAR
+composer install
+
