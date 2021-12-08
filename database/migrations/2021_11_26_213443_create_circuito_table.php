@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPilotoIdToEquipe extends Migration
+class CreateCircuitoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddPilotoIdToEquipe extends Migration
      */
     public function up()
     {
-        Schema::table('piloto', function (Blueprint $table) {
-            $table->bigInteger('equipe_id')->unsigned()->nullable();
-            $table->foreign('equipe_id')->references('id')->on('equipe');
+        Schema::create('circuito', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome', 100);
+            $table->string('pais', 50);
+            $table->string('cidade', 150);
+            $table->timestamps();
         });
     }
 
@@ -26,8 +29,6 @@ class AddPilotoIdToEquipe extends Migration
      */
     public function down()
     {
-        Schema::table('equipe', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('circuito');
     }
 }

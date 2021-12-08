@@ -2,19 +2,19 @@
 
 return [
 
-    'title' => 'Financial Controll',
+    'title' => 'Formula 1',
     'title_prefix' => '',
     'title_postfix' => '',
 
     'use_ico_only' => false,
     'use_full_favicon' => false,
 
-    'logo' => '<b>Financial</b>CONTROLL',
+    'logo' => '<b>Formula</b>1',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Financial Controll',
+    'logo_img_alt' => 'Formula 1',
 
     'usermenu_enabled' => true,
     'usermenu_header' => false,
@@ -112,19 +112,29 @@ return [
         // ],
         ['header' => 'ENTRADAS'],
         [
-            'text' => 'Entradas',
-            'url'  => 'entradas',
+            'text' => 'Pilotos',
+            'url'  => 'piloto',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Saidas',
-            'url'  => 'saidas',
+            'text' => 'Equipes',
+            'url'  => 'equipe',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Circuito',
+            'url'  => 'circuto',
             'icon' => 'fas fa-fw fa-flag',
         ],
         [
-            'text' => 'Pessoas',
-            'url'  => 'pessoas',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Pais',
+            'url'  => 'pais',
+            'icon' => 'fas fa-fw fa-flag',
+        ],
+        [
+            'text' => 'Cidade',
+            'url'  => 'cidade',
+            'icon' => 'fas fa-fw fa-flag',
         ],
         // [
         //     'text' => 'change_password',
