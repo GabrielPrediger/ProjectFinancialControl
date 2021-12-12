@@ -22,11 +22,11 @@
 			<th>Ações</th>
 		</thead>
         <tbody>
-            @foreach ($circuito as $circuito)
+            @foreach ($circuitos as $circuito)
                 <tr>
                     <td>{{ $circuito->nome }}</td>
-                    <td>{{ $circuito->pais }}</td>
-                    <td>{{ $circuito->cidade }}</td>
+                    <td>{{ $circuito->pais->nome }}</td>
+                    <td>{{ $circuito->cidade->nome }}</td>
                     <td>
 						<a href="{{ route('circuito.edit', ['id'=>$circuito->id]) }}" class="btn-sm btn-success">Editar</a>
                         <a href="#" onclick="return ConfirmaExclusao({{$circuito->id}})" class="btn-sm btn-danger">Remover</a>
@@ -37,7 +37,7 @@
         </tbody>
 	</table>
 
-    {{ $circuito->links() }}
+    {{ $circuitos->links("pagination::Bootstrap-4") }}
     
     <a href="{{ route('circuito.create', []) }}" class="btn-sm btn-info">Adicionar</a>    
 @stop

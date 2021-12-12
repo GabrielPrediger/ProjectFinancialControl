@@ -19,13 +19,13 @@
     <div class="form-group">
 			{!! Form::label('pais_id', 'Pais:') !!}
 			{!! Form::select('pais_id', 
-							 \App\Pais::orderBy('nome')->pluck('nome', 'id')->toArray(),
+							 App\Models\Pais::orderBy('nome')->pluck('nome', 'id')->toArray(),
 							 null, ['class'=>'form-control', 'required']) !!}
 	</div>
     <div class="form-group">
 			{!! Form::label('cidade_id', 'Cidade:') !!}
 			{!! Form::select('cidade_id', 
-							 \App\Cidade::orderBy('nome')->pluck('nome', 'id')->toArray(),
+							 App\Models\Cidade::orderBy('nome')->pluck('nome', 'id')->toArray(),
 							 null, ['class'=>'form-control', 'required']) !!}
 	</div>
     <div class="form-group">

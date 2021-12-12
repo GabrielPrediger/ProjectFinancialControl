@@ -13,11 +13,13 @@ class CreateEquipeTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipe', function (Blueprint $table) {
+        Schema::create('equipes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 100);
-            $table->string('pais', 50);
-            $table->string('piloto', 100);
+            $table->integer('pais_id');
+
+            $table->foreign('pais_id')->references('id')->on('paises');
+
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateEquipeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipe');
+        Schema::dropIfExists('equipes');
     }
 }

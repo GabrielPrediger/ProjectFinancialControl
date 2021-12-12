@@ -13,15 +13,19 @@ class CreatePilotoTable extends Migration
      */
     public function up()
     {
-        Schema::create('piloto', function (Blueprint $table) {
+        Schema::create('pilotos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 100);
             $table->integer('numero');
             $table->integer('vitorias');
             $table->date('dt_nascimento');
             $table->date('inicio_atividades');
-            $table->string('pais', 50);
-            $table->string('equipe', 100);
+            $table->integer('pais_id');
+            $table->integer('equipe_id');
+
+            $table->foreign('pais_id')->references('id')->on('paises');
+            $table->foreign('equipe_id')->references('id')->on('equipes');
+
             $table->timestamps();
         });
     }
@@ -33,6 +37,6 @@ class CreatePilotoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('piloto');
+        Schema::dropIfExists('pilotos');
     }
 }

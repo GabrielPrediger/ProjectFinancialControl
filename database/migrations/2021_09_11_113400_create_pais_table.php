@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddEquipeIdToPiloto extends Migration
+class CreatePaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddEquipeIdToPiloto extends Migration
      */
     public function up()
     {
-        Schema::table('piloto', function (Blueprint $table) {
-            $table->bigInteger('equipe_id')->unsigned()->nullable();
-            $table->foreign('equipe_id')->references('id')->on('equipe');
+        Schema::create('paises', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome', 100);
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ class AddEquipeIdToPiloto extends Migration
      */
     public function down()
     {
-        Schema::table('equipe', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('paises');
     }
 }

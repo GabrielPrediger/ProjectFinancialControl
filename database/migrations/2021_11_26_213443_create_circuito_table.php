@@ -13,11 +13,15 @@ class CreateCircuitoTable extends Migration
      */
     public function up()
     {
-        Schema::create('circuito', function (Blueprint $table) {
+        Schema::create('circuitos', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 100);
-            $table->string('pais', 50);
-            $table->string('cidade', 150);
+            $table->integer('pais_id');
+            $table->integer('cidade_id');
+
+            $table->foreign('pais_id')->references('id')->on('paises');
+            $table->foreign('cidade_id')->references('id')->on('cidades');
+
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateCircuitoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('circuito');
+        Schema::dropIfExists('circuitos');
     }
 }

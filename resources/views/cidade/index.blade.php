@@ -9,19 +9,19 @@
 		</thead>
 
 		<tbody>
-			@foreach($cidade as $cidade)
+			@foreach($cidades as $cidade)
 				<tr>
 					<td>{{ $cidade->nome }}</td>
 					<td>
 						<a href="{{ route('cidade.edit', ['id'=>$cidade->id]) }}" class="btn-sm btn-success">Editar</a>
-						<a href="#" onclick="return ConfirmaExclusao({{$pais->id}})"  class="btn-sm btn-danger">Remover</a>
+						<a href="#" onclick="return ConfirmaExclusao({{$cidade->id}})"  class="btn-sm btn-danger">Remover</a>
 					</td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>	
 
-	{{ $cidade->links() }}
+	{{ $cidades->links("pagination::Bootstrap-4") }}
 
 	<a href="{{ route('cidade.create', []) }}" class="btn btn-info">Adicionar</a>
 @stop

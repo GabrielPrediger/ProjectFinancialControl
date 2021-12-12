@@ -123,7 +123,7 @@ return [
         ],
         [
             'text' => 'Circuito',
-            'url'  => 'circuto',
+            'url'  => 'circuito',
             'icon' => 'fas fa-fw fa-flag',
         ],
         [

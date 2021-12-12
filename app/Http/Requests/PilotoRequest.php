@@ -29,8 +29,8 @@ class PilotoRequest extends FormRequest
             'vitorias' => 'required',
             'dt_nascimento' => 'required',
             'inicio_atividades' => 'required',
-            'pais' => 'required',
-            'equipe' => 'required',
+            'pais_id' => 'required',
+            'equipe_id' => 'required',
         ];
     }
 }

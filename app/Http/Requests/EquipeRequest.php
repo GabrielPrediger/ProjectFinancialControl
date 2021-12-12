@@ -25,8 +25,7 @@ class EquipeRequest extends FormRequest
     {
         return [
             'nome' => 'required',
-            'piloto' => 'required',
-            'pais' => 'required',
+            'pais_id' => 'required',
         ];
     }
 }

@@ -16,6 +16,7 @@
                         //success data
                         console.log(data);
                         if (data.status == 200) {
+                            
                             swal.fire(
                                 'Deletado!',
                                 'Exclusão confirmada.',
