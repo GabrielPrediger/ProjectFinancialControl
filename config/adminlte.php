@@ -9,8 +9,8 @@ return [
     'use_ico_only' => false,
     'use_full_favicon' => false,
 
-    'logo' => '<b>Formula</b>1',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Formula</b> 1',
+    'logo_img' => 'vendor/adminlte/dist/img/f1.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -110,7 +110,7 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
-        ['header' => 'ENTRADAS'],
+        ['header' => 'OPÇÕES'],
         [
             'text' => 'Pilotos',
             'url'  => 'piloto',
