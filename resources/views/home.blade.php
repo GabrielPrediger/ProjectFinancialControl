@@ -14,7 +14,13 @@
                         </div>
                     @endif
 
-                    {{ __('Seja bem vindo ao Formula 1 - Controller') }}
+                    {{ __('Wellcome to Formula 1 Controller Season') }}
+                    <br>
+                    <br>
+                    <br>
+                    
+                    {{ __('Please choose some of the options in the left menu to get started.') }}
+
                 </div>
             </div>
         </div>
