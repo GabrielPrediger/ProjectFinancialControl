@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pais;
+use App\Models\Pais;
 use App\Http\Requests\PaisRequest;
 
 class PaisController extends Controller
 {
 	public function index() {
-		$pais = Pais::orderBy('nome')->paginate(5);
-		return view('pais.index', ['pais'=>$pais]);
+		$paises = Pais::orderBy('nome')->paginate(5);
+		return view('pais.index', ['paises'=>$paises]);
 	}
 
 	public function create() {

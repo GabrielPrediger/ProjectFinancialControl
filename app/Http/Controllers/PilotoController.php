@@ -12,14 +12,14 @@ class PilotoController extends Controller
     public function index(Request $filtro) {
 		$filtragem = $filtro->get('desc_filtro');
         if ($filtragem == null) {
-            $Piloto = Piloto::orderBy('nome')->paginate(5);
+            $pilotos = Piloto::orderBy('nome')->paginate(5);
         } else
-            $Piloto = Piloto::where('nome', 'like', '%'.$filtragem.'%')
+            $pilotos = Piloto::where('nome', 'like', '%'.$filtragem.'%')
         					->orderBy("nome")
         					->paginate(5)
         					->setpath('piloto?desc_filtro='+$filtragem);
 
-		return view('piloto.index', ['piloto'=>$Piloto]);
+		return view('piloto.index', ['pilotos'=>$pilotos]);
 	}
         
 
@@ -48,7 +48,7 @@ class PilotoController extends Controller
 	}
 
     public function edit($id) {
-        $Piloto = Piloto::find($id);
+        $piloto = Piloto::find($id);
         return view('piloto.edit', compact('piloto'));
     }
 

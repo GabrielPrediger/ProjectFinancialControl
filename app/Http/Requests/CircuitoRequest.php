@@ -25,8 +25,8 @@ class CircuitoRequest extends FormRequest
     {
         return [
             'nome' => 'required',
-            'pais' => 'required',
-            'cidade' => 'required',
+            'pais_id' => 'required',
+            'cidade_id' => 'required',
         ];
     }
 }

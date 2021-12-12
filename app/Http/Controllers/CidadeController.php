@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cidade;
+use App\Models\Cidade;
 use App\Http\Requests\CidadeRequest;
 
 class CidadeController extends Controller
 {
 	public function index() {
-		$cidade = Cidade::orderBy('nome')->paginate(5);
-		return view('cidade.index', ['cidade'=>$cidade]);
+		$cidades = Cidade::orderBy('nome')->paginate(5);
+		return view('cidade.index', ['cidades'=>$cidades]);
 	}
 
 	public function create() {

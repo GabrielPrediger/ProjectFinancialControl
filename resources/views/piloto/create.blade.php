@@ -35,13 +35,13 @@
     <div class="form-group">
 			{!! Form::label('pais_id', 'Pais:') !!}
 			{!! Form::select('pais_id', 
-							 \App\Pais::orderBy('nome')->pluck('nome', 'id')->toArray(),
+							 App\Models\Pais::orderBy('nome')->pluck('nome', 'id')->toArray(),
 							 null, ['class'=>'form-control', 'required']) !!}
 	</div>
     <div class="form-group">
 			{!! Form::label('equipe_id', 'Equipe:') !!}
 			{!! Form::select('equipe_id', 
-							 \App\Equipe::orderBy('nome')->pluck('nome', 'id')->toArray(),
+                             App\Models\Equipe::orderBy('nome')->pluck('nome', 'id')->toArray(),
 							 null, ['class'=>'form-control', 'required']) !!}
 	</div>
     <div class="form-group">

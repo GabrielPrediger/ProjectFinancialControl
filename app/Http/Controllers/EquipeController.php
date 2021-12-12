@@ -9,8 +9,8 @@ use App\Http\Requests\EquipeRequest;
 class EquipeController extends Controller
 {
     public function index(){
-        $Equipe = Equipe::orderBy('nome')->paginate(5);
-        return view('equipe.index', ['equipe' => $Equipe]);
+        $equipes = Equipe::orderBy('nome')->paginate(5);
+        return view('equipe.index', ['equipes' => $equipes]);
     }
 
     public function create() {
@@ -38,7 +38,7 @@ class EquipeController extends Controller
 	}
 
     public function edit($id) {
-        $Equipe = Equipe::find($id);
+        $equipe = Equipe::find($id);
         return view('equipe.edit', compact('equipe'));
     }
 

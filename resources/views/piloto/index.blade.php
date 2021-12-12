@@ -24,18 +24,18 @@
 			<th>Ações</th>
 		</thead>
         <tbody>
-            @foreach ($piloto as $piloto)
+            @foreach ($pilotos as $piloto)
                 <tr>
                     <td>{{ $piloto->nome }}</td>
                     <td>{{ $piloto->numero }}</td>
                     <td>{{ $piloto->vitorias }}</td>
                     <td>{{ Carbon\Carbon::parse($piloto->dt_nascimento)->format('d/m/y') }}</td>
                     <td>{{ Carbon\Carbon::parse($piloto->inicio_atividades)->format('d/m/y') }}</td>
-                    <td>{{ $piloto->pais }}</td>
-                    <td>{{ $piloto->equipe }}</td>
+                    <td>{{ $piloto->pais->nome }}</td>
+                    <td>{{ $piloto->equipe->nome }}</td>
                     <td>
-						<a href="{{ route('entradas.edit', ['id'=>$entradas->id]) }}" class="btn-sm btn-success">Editar</a>
-                        <a href="#" onclick="return ConfirmaExclusao({{$entradas->id}})" class="btn-sm btn-danger">Remover</a>
+						<a href="{{ route('piloto.edit', ['id'=>$piloto->id]) }}" class="btn-sm btn-success">Editar</a>
+                        <a href="#" onclick="return ConfirmaExclusao({{$piloto->id}})" class="btn-sm btn-danger">Remover</a>
 
 					</td>
                 </tr>    
@@ -43,9 +43,9 @@
         </tbody>
 	</table>
 
-    {{ $piloto->links() }}
+    {{ $pilotos->links("pagination::Bootstrap-4") }}
     
-    <a href="{{ route('entradas.create', []) }}" class="btn-sm btn-info">Adicionar</a>    
+    <a href="{{ route('piloto.create', []) }}" class="btn-sm btn-info">Adicionar</a>    
 @stop
 
 @section('table-delete')

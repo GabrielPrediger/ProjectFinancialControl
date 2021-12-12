@@ -11,37 +11,37 @@
         </ul>
     @endif
 
-    {!! Form::open(['route' => ['piloto.update', 'id'=>$piloto->id] 'method'=>'put']) !!}
+    {!! Form::open(['route' => ['piloto.update', 'id'=>$piloto->id], 'method'=>'put']) !!}
     <div class="form-group">
         {!! Form::label('nome', 'Nome:') !!}
-        {!! Form::text('nome', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::text('nome', $piloto->nome, ['class' => 'form-control', 'required']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('numero', 'Numero:') !!}
-        {!! Form::number('numero', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::number('numero', $piloto->numero, ['class' => 'form-control', 'required']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('vitorias', 'Vitorias:') !!}
-        {!! Form::number('vitorias', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::number('vitorias', $piloto->vitorias, ['class' => 'form-control', 'required']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('dt_nascimento', 'Data de Nascimento:') !!}
-        {!! Form::date('dt_nascimento', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::date('dt_nascimento', $piloto->dt_nascimento, ['class' => 'form-control', 'required']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('inicio_atividades', 'Inicio das atividades:') !!}
-        {!! Form::date('inicio_atividades', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::date('inicio_atividades', $piloto->inicio_atividades, ['class' => 'form-control', 'required']) !!}
     </div>
     <div class="form-group">
 			{!! Form::label('pais_id', 'Pais:') !!}
 			{!! Form::select('pais_id', 
-							 \App\Pais::orderBy('nome')->pluck('nome', 'id')->toArray(),
+							 App\Models\Pais::orderBy('nome')->pluck('nome', 'id')->toArray(),
 							 null, ['class'=>'form-control', 'required']) !!}
 	</div>
     <div class="form-group">
 			{!! Form::label('equipe_id', 'Equipe:') !!}
 			{!! Form::select('equipe_id', 
-							 \App\Equipe::orderBy('nome')->pluck('nome', 'id')->toArray(),
+							 App\Models\Equipe::orderBy('nome')->pluck('nome', 'id')->toArray(),
 							 null, ['class'=>'form-control', 'required']) !!}
 	</div>
     <div class="form-group">

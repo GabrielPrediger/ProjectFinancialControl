@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Circuito;
+use App\Models\Circuito;
 use App\Http\Requests\CircuitoRequest;
 
 class CircuitoController extends Controller
 {
     public function index(){
-        $Circuito = Circuito::orderBy('nome')->paginate(5);
-        return view('circuito.index', ['circuito' => $Circuito]);
+        $circuitos = Circuito::orderBy('nome')->paginate(5);
+        return view('circuito.index', ['circuitos' => $circuitos]);
     }
 
     public function create() {
@@ -21,7 +21,7 @@ class CircuitoController extends Controller
         $novo_circuito = $request->all();
         Circuito::create($novo_circuito);
 
-        return redirect()->route('Circcircuitouito');
+        return redirect()->route('circuito');
     }
 
     public function destroy($id) {
@@ -38,7 +38,7 @@ class CircuitoController extends Controller
 	}
 
     public function edit($id) {
-        $Circuito = Circuito::find($id);
+        $circuito = Circuito::find($id);
         return view('circuito.edit', compact('circuito'));
     }
 
